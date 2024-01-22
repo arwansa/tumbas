@@ -27,9 +27,9 @@ class Request {
     _dio
       ..interceptors.add(
         LogInterceptor(
-          requestBody: kDebugMode ? true : false,
-          responseBody: kDebugMode ? true : false,
-          requestHeader: kDebugMode ? true : false,
+          requestBody: kDebugMode,
+          responseBody: kDebugMode,
+          requestHeader: kDebugMode,
         ),
       )
       ..interceptors.add(
