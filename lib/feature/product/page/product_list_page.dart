@@ -9,6 +9,7 @@ import 'package:tumbas/routes/app_routers.gr.dart';
 
 class ProductListPage extends StatefulWidget {
   const ProductListPage({super.key});
+
   static const routeName = '/products-page';
 
   @override
@@ -64,11 +65,8 @@ class _ProductListPageState extends State<ProductListPage> {
             }
             return GridView.builder(
               controller: _scrollController,
-              gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                maxCrossAxisExtent: 200,
-                crossAxisSpacing: 8,
-                mainAxisSpacing: 8,
-              ),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2),
               padding: const EdgeInsets.all(8.0),
               itemCount: _productList.length,
               itemBuilder: (BuildContext ctx, index) {
